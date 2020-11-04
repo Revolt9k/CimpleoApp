@@ -1,0 +1,11 @@
+.huge {
+    height: 100vh;
+    background-color: teal;
+    width: 400px;
+}
+
+.small {
+    height: 100vh;
+    background-color: teal;
+    width: 200px;
+}

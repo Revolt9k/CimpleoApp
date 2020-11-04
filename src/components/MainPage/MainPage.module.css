@@ -1,6 +1,4 @@
-.navCol {
-    height: 100vh;
-    background-color: teal;
-    min-width: 200px;
+.container {
+    display: flex;
+    justify-content: flex-start;
 }
-
