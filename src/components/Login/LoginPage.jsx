@@ -1,5 +1,7 @@
 import React from "react";
 import {Redirect} from "react-router-dom";
+import LoginForm from "./LoginForm";
+import RegistrationForm from "./RegistrationForm";
 
 const LoginPage = (props) => {
 
@@ -7,17 +9,12 @@ const LoginPage = (props) => {
         return <Redirect to={"/main"}/>
     }
 
-    let loginRef = React.createRef()
-    let passwordRef = React.createRef()
-    let registerLoginRef = React.createRef()
-    let registerPasswordRef = React.createRef()
-
-    const handleLoginChange = () => {
-        props.setLogin(loginRef.current.value)
+    const handleLoginChange = (refValue) => {
+        props.setLogin(refValue)
     }
 
-    const handlePasswordChange = () => {
-        props.setPassword(passwordRef.current.value)
+    const handlePasswordChange = (refValue) => {
+        props.setPassword(refValue)
     }
 
     const handleSubmit = () => {
@@ -26,26 +23,24 @@ const LoginPage = (props) => {
 
     const handleRegister = (login, password) => {
         props.registerNewUser(login, password)
+        props.handleRegistrationMode()
     }
 
     return <div>
-        {!props.registrationMode ? <div>
-            <input ref={loginRef} value={props.login} onChange={() => handleLoginChange()} type="text"/>
-            <input ref={passwordRef} value={props.password} onChange={() => handlePasswordChange()} type="password"/>
-            <button onClick={() => handleSubmit()}>login</button>
-            <button onClick={() => props.handleRegistrationMode()}>registration</button>
-        </div> :
-            <div>
-                registrartion mode
-                <input type="text" ref={registerLoginRef}/>
-                <input type="text" ref={registerPasswordRef}/>
-                <button onClick={() => props.handleRegistrationMode()}>move to login</button>
-                <button onClick={() => handleRegister(registerLoginRef.current.value, registerPasswordRef.current.value)}>registration</button>
-            </div>
-
+        {!props.registrationMode ?
+            <LoginForm handleLoginChange={handleLoginChange}
+                       handlePasswordChange={handlePasswordChange}
+                       handleSubmit={handleSubmit}
+                       handleRegistrationMode={props.handleRegistrationMode}
+                       isNewUserRegistered={props.isNewUserRegistered}/> :
+            <RegistrationForm handleRegister={handleRegister}
+                              handleRegistrationMode={props.handleRegistrationMode}/>
         }
-
     </div>
 }
+
+
+
+
 
 export default LoginPage

@@ -17,6 +17,7 @@ class LoginContainer extends React.Component {
                      handleRegistrationMode={this.props.handleRegistrationMode}
                      registerNewUser={this.props.registerNewUser}
                      isLogined={this.props.isLogined}
+                     isNewUserRegistered={this.props.isNewUserRegistered}
 
           />
         );
@@ -29,6 +30,7 @@ let mapStateToProps = (state) => ({
     password: state.login.password,
     registrationMode: state.login.registrationMode,
     isLogined: state.login.isLogined,
+    isNewUserRegistered: state.login.isNewUserRegistered,
 })
 
 export default connect(mapStateToProps, {setLogin, setPassword, getLogined, handleRegistrationMode, registerNewUser})(LoginContainer)

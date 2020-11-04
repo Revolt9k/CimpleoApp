@@ -1,5 +1,8 @@
 let initialState = {
-    isUsersPageShown: true
+    users: [
+        {id:1},
+        {id:2}
+    ]
 }
 
 const SHOW_USERS_PAGE = 'showUsersPage'
