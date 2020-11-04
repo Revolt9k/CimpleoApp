@@ -1,10 +1,10 @@
 import React from "react";
 import Nav from "../Nav";
-import SensorsPage from "../SensorsPage";
 import {withAuthRedirect} from "../../HOC/isLoginedRedirect";
 import {Container, Col, Row} from "react-bootstrap";
 import css from "./MainPage.module.css"
 import UserPageContainer from "../UserPage/UserPageContainer";
+import SensorsPageContainer from "../SensorsPage/SensorsPageContainer";
 
 const MainPage = (props) => {
     return <Container fluid >
@@ -18,7 +18,7 @@ const MainPage = (props) => {
                 </div>
             </Col>
             <Col xs={2}>
-                {!props.isUsersPageShown ? <SensorsPage/> : <UserPageContainer/>}
+                {!props.isUsersPageShown ? <SensorsPageContainer/> : <UserPageContainer/>}
             </Col>
         </Row>
     </Container>

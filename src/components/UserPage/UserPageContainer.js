@@ -1,7 +1,7 @@
 import React from "react";
 import {connect} from "react-redux";
 import UserPage from "./UserPage";
-import {deleteUser, enterEditMode, saveChanges} from "../../redux/LoginReducer";
+import {deleteUser, enterEditMode, saveChanges} from "../../redux/UsersReducer";
 
 class UserPageContainer extends React.Component {
 
@@ -12,7 +12,7 @@ class UserPageContainer extends React.Component {
 }
 
 let mapStateToProps = (state) => ({
-    listOfUsers: state.login.registeredUsers
+    listOfUsers: state.users.registeredUsers
 })
 
 

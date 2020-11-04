@@ -4,13 +4,13 @@ let initialState = {
     isLogined: true,
     registeredUsers: [
         {id: 1, login: "user1", password: "pass1", editMode: false},
-        {id: 2, login: "123", password: "pass123", editMode: false},
-        {id: 3, login: "123", password: "pass123", editMode: false},
-        {id: 4, login: "123", password: "pass123", editMode: false},
-        {id: 5, login: "123", password: "pass123", editMode: false},
-        {id: 6, login: "123", password: "pass123", editMode: false},
-        {id: 7, login: "123", password: "pass123", editMode: false},
-        {id: 8, login: "123", password: "pass123", editMode: false},
+        {id: 2, login: "user2", password: "pass2", editMode: false},
+        {id: 3, login: "user3", password: "pass3", editMode: false},
+        {id: 4, login: "user4", password: "pass4", editMode: false},
+        {id: 5, login: "user5", password: "pass5", editMode: false},
+        {id: 6, login: "user6", password: "pass6", editMode: false},
+        {id: 7, login: "user7", password: "pass7", editMode: false},
+        {id: 8, login: "user8", password: "pass8", editMode: false},
     ],
     registrationMode: false,
     isNewUserRegistered: false,
@@ -25,7 +25,7 @@ const DELETE_USER = 'deleteUser'
 const ENTER_EDIT_MODE = 'enterEditMode'
 const SAVE_CHANGES = 'saveChanges'
 
-const loginReducer = (state = initialState, action) => {
+const usersReducer = (state = initialState, action) => {
 
     switch (action.type) {
         case SET_LOGIN: {
@@ -59,7 +59,7 @@ const loginReducer = (state = initialState, action) => {
         }
         case REGISTER_NEW_USER: {
             let newUser = {
-                id: "new",
+                id: state.registeredUsers.length+1,
                 login: action.login,
                 password: action.password,
             }
@@ -75,7 +75,7 @@ const loginReducer = (state = initialState, action) => {
                 registeredUsers: state.registeredUsers
                     .slice(0, action.id - 1)
                     .concat(" ")
-                    .concat(state.registeredUsers.slice(action.id, 10))
+                    .concat(state.registeredUsers.slice(action.id, state.registeredUsers.length+1))
             }
         }
         case ENTER_EDIT_MODE: {
@@ -128,4 +128,4 @@ export const enterEditMode = (id) => ({type: ENTER_EDIT_MODE, id})
 export const saveChanges = (id, newlogin) => ({type: SAVE_CHANGES, id, newlogin})
 
 
-export default loginReducer
+export default usersReducer
