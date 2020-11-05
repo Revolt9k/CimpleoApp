@@ -16,15 +16,15 @@ const Nav = (props) => {
     }
 
     return <div className={css.nav_wrapper}> {
-        !minimizeMode ? <div className={css.max}>
+        !minimizeMode ?
             <MaximizedNav showUsersPage={props.showUsersPage}
                           showSensorsPage={props.showSensorsPage}
                           buttonCallback={minimize}/>
-        </div> : <div className={css.min}>
+        :
             <MinimizedNav showUsersPage={props.showUsersPage}
                           showSensorsPage={props.showSensorsPage}
                           buttonCallback={maximize}/>
-        </div>
+
     }</div>
 }
 

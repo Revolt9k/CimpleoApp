@@ -6,26 +6,17 @@
     color: white;
 }
 
-.max {
-    width: 200px;
-    /*transition: all .2s linear;*/
-}
-
 .min {
-    width: 50px;
-    /*transition: all .2s linear;*/
-}
-
-.min_inner {
     text-align: center;
 }
 
 .icon {
+    display:inline-flex;
     cursor: pointer;
-    margin: 5px;
+    margin: 3px;
 }
 
-.text {
+.text_user {
     cursor: pointer;
     padding-left: 10px;
 }
@@ -37,8 +28,8 @@
 }
 
 .arrow {
-    cursor: pointer;
     display: flex;
     justify-content: center;
-    margin-top: 85vh;
+    margin-top: 80vh;
+    cursor: pointer;
 }

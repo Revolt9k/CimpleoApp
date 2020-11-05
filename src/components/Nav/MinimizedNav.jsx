@@ -4,17 +4,25 @@ import React from "react";
 import css from "./Nav.module.css";
 
 const MinimizedNav = (props) => {
-    return <div className={css.min_inner}>
-        <div className={css.icon}><FontAwesomeIcon onClick={() => props.showUsersPage()} icon={faUserFriends}
-                                                   size={"lg"} color="white"/>
+    return <div className={css.min}>
+        <div className={css.icon}>
+            <FontAwesomeIcon icon={faUserFriends}
+                             size={"lg"}
+                             color="white"
+                             onClick={() => props.showUsersPage()}/>
         </div>
-        <div className={css.icon}><FontAwesomeIcon onClick={() => props.showSensorsPage()} icon={faListAlt} size={"lg"}
-                                                   color="white"/>
+        <div className={css.icon}>
+            <FontAwesomeIcon icon={faListAlt}
+                             size={"lg"}
+                             color="white"
+                             onClick={() => props.showSensorsPage()}/>
         </div>
         <div className={css.arrow}>
-            <FontAwesomeIcon icon={faArrowRight} size={"2x"} color="white" onClick={() => props.buttonCallback()}/>
+            <FontAwesomeIcon icon={faArrowRight}
+                             size={"2x"}
+                             color="white"
+                             onClick={() => props.buttonCallback()}/>
         </div>
-
     </div>
 }
 
