@@ -7,7 +7,7 @@ const App = () => {
     return (
         <div>
             <Switch>
-                <Route exact path='/' component={LoginContainer}/>
+                <Route exact path='/' render={() => <LoginContainer/>}/>
                 <Route path='/login' render={() => <LoginContainer/>}/>
                 <Route path='/main' render={() => <MainPageContainer/>}/>
             </Switch>

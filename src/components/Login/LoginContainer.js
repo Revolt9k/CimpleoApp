@@ -1,17 +1,12 @@
 import LoginPage from "./LoginPage";
-import React from "react";
 import {connect} from "react-redux";
-import {setLogin, setPassword, getLogined, handleRegistrationMode, registerNewUser} from "../../redux/UsersReducer";
-
-
-class LoginContainer extends React.Component {
-
-    render() {
-        return (
-          <LoginPage />
-        );
-    }
-}
+import {
+    setLogin,
+    setPassword,
+    getLogined,
+    handleRegistrationMode,
+    registerNewUser
+} from "../../redux/UsersReducer";
 
 
 let mapStateToProps = (state) => ({
@@ -22,4 +17,10 @@ let mapStateToProps = (state) => ({
     isNewUserRegistered: state.users.isNewUserRegistered,
 })
 
-export default connect(mapStateToProps, {setLogin, setPassword, getLogined, handleRegistrationMode, registerNewUser})(LoginPage)
+export default connect(mapStateToProps, {
+    setLogin,
+    setPassword,
+    getLogined,
+    handleRegistrationMode,
+    registerNewUser
+})(LoginPage)

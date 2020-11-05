@@ -8,17 +8,19 @@ const LoginForm = (props) => {
     let loginRef = React.createRef()
     let passwordRef = React.createRef()
 
-    return <div className={css.loginWrapper}>
+    return <form className={css.loginWrapper}>
         Login
         <input ref={loginRef}
                value={props.login}
                onChange={() => props.handleLoginChange(loginRef.current.value)}
-               type="text"/>
+               type="text"
+               autoComplete="current-login"/>
         Password
         <input ref={passwordRef}
                value={props.password}
                onChange={() => props.handlePasswordChange(passwordRef.current.value)}
-               type="password"/>
+               type="password"
+               autoComplete="current-password"/>
         <div className={css.buttons}>
             <Button className={css.button + " " + css.button_left}
                     onClick={() => props.handleSubmit()}
@@ -28,7 +30,7 @@ const LoginForm = (props) => {
                     variant="outline-info">registration</Button>
         </div>
         {props.isNewUserRegistered ? <Alert className={css.alert} variant="success">New user Created!</Alert> : null}
-    </div>
+    </form>
 }
 
 export default LoginForm

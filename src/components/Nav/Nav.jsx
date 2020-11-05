@@ -1,7 +1,6 @@
 import React, {useState} from "react";
 import css from "./Nav.module.css"
 
-
 const Nav = (props) => {
 
     let [minimizeMode, setMinimizeMode] = useState(false)
