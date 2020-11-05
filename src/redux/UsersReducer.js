@@ -1,7 +1,7 @@
 let initialState = {
     login: "",
     password: "",
-    isLogined: true,
+    isLogined: false,
     registeredUsers: [
         {id: 1, login: "user1", password: "pass1", editMode: false},
         {id: 2, login: "user2", password: "pass2", editMode: false},

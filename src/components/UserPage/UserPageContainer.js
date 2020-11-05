@@ -6,7 +6,7 @@ import {deleteUser, enterEditMode, saveChanges} from "../../redux/UsersReducer";
 class UserPageContainer extends React.Component {
 
     render() {
-        return <UserPage listOfUsers={this.props.listOfUsers} deleteUser={this.props.deleteUser} enterEditMode={this.props.enterEditMode} saveChanges={this.props.saveChanges}/>
+        return <UserPage />
     }
 
 }
@@ -16,4 +16,4 @@ let mapStateToProps = (state) => ({
 })
 
 
-export default connect(mapStateToProps, {deleteUser, enterEditMode, saveChanges})(UserPageContainer)
+export default connect(mapStateToProps, {deleteUser, enterEditMode, saveChanges})(UserPage)

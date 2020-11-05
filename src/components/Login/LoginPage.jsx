@@ -2,6 +2,7 @@ import React from "react";
 import {Redirect} from "react-router-dom";
 import LoginForm from "./LoginForm";
 import RegistrationForm from "./RegistrationForm";
+import css from "./Login.module.css"
 
 const LoginPage = (props) => {
 
@@ -26,7 +27,7 @@ const LoginPage = (props) => {
         props.handleRegistrationMode()
     }
 
-    return <div>
+    return <div className={css.wrapper}>
         {!props.registrationMode ?
             <LoginForm handleLoginChange={handleLoginChange}
                        handlePasswordChange={handlePasswordChange}

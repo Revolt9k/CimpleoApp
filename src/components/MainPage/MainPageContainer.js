@@ -6,7 +6,7 @@ import {showUsersPage, showSensorsPage} from "../../redux/mainPageReducer";
 class MainPageContainer extends React.Component {
 
     render() {
-        return <MainPage isUsersPageShown={this.props.isUsersPageShown} showUsersPage={this.props.showUsersPage} showSensorsPage={this.props.showSensorsPage} />
+        return <MainPage  />
     }
 
 }
@@ -16,4 +16,4 @@ let mapStateToProps = (state) => ({
 })
 
 
-export default connect(mapStateToProps, {showUsersPage, showSensorsPage})(MainPageContainer)
+export default connect(mapStateToProps, {showUsersPage, showSensorsPage})(MainPage)

@@ -1,5 +1,5 @@
 import React from "react";
-import {deleteSensor} from "../../redux/SensorsReducer";
+import css from "./Sensor.module.css"
 
 const SensorsPage = (props) => {
 
@@ -9,7 +9,7 @@ const SensorsPage = (props) => {
         props.saveChanges(id, newDegreeValue)
     }
 
-    return <div>
+    return <div className={css.wrapper}>
         {props.listOfSensors.map(sensor => {
             return <div key={sensor.id}>
                 {sensor.editMode ? <div>

@@ -2,10 +2,19 @@
     height: 100vh;
     background-color: teal;
     width: 400px;
+    transition: all .2s linear;
 }
 
 .small {
     height: 100vh;
     background-color: teal;
     width: 200px;
+    transition: all .2s linear;
+
+}
+
+.arrow {
+    position: absolute;
+    left: 20px;
+    bottom: 10px;
 }

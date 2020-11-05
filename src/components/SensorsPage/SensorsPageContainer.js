@@ -8,12 +8,7 @@ class SensorsPageContainer extends React.Component {
 
     render() {
         return (
-          <SensorsPage
-              listOfSensors={this.props.listOfSensors}
-              enterEditMode={this.props.enterEditMode}
-              deleteSensor={this.props.deleteSensor}
-              saveChanges={this.props.saveChanges}
-          />
+          <SensorsPage />
         );
     }
 }
@@ -23,4 +18,4 @@ let mapStateToProps = (state) => ({
     listOfSensors: state.sensors.registeredSensors
 })
 
-export default connect(mapStateToProps, {deleteSensor, enterEditMode, saveChanges})(SensorsPageContainer)
+export default connect(mapStateToProps, {deleteSensor, enterEditMode, saveChanges})(SensorsPage)

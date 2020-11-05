@@ -1,0 +1,53 @@
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.loginWrapper {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+
+.button {
+    padding: 10px 15px;
+    color: #7777c3;
+    border: 1px solid #7777c3;
+    font-weight: 700;
+    font-size: 15px;
+    text-transform: uppercase;
+}
+
+.button_left {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-right: none;
+}
+
+.button_right {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.button_back {
+    color: darkred;
+    border: 1px solid darkred;
+}
+
+.button_create {
+    color: green;
+    border: 1px solid green;
+}
+
+.alert {
+    margin-top: 10px;
+    text-align: center;
+}
