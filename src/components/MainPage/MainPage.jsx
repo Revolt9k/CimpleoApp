@@ -5,6 +5,7 @@ import css from "./MainPage.module.css"
 import UserPageContainer from "../UserPage/UserPageContainer";
 import SensorsPageContainer from "../SensorsPage/SensorsPageContainer";
 
+
 const MainPage = (props) => {
     return <div className={css.container}>
         <div>
