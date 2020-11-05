@@ -2,8 +2,8 @@ import React from "react";
 import Nav from "../Nav/Nav";
 import {withAuthRedirect} from "../../HOC/isLoginedRedirect";
 import css from "./MainPage.module.css"
-import UserPageContainer from "../UserPage/UserPageContainer";
-import SensorsPageContainer from "../SensorsPage/SensorsPageContainer";
+import UserPageContainer from "../Table/UserPage/UserPageContainer";
+import SensorsPageContainer from "../Table/SensorsPage/SensorsPageContainer";
 
 
 const MainPage = (props) => {

@@ -1,7 +1,7 @@
 let initialState = {
     login: "",
     password: "",
-    isLogined: false,
+    isLogined: true,
     registeredUsers: [
         {id: 1, login: "user1", password: "pass1", editMode: false},
         {id: 2, login: "user2", password: "pass2", editMode: false},
@@ -11,6 +11,8 @@ let initialState = {
         {id: 6, login: "user6", password: "pass6", editMode: false},
         {id: 7, login: "user7", password: "pass7", editMode: false},
         {id: 8, login: "user8", password: "pass8", editMode: false},
+        {id: 9, login: "user9", password: "pass9", editMode: false},
+        {id: 10, login: "user10", password: "pass10", editMode: false},
     ],
     registrationMode: false,
     isNewUserRegistered: false,
@@ -22,8 +24,9 @@ const GET_LOGINED = 'getLogined'
 const HANDLE_REGISTRATION_MODE = 'handleRegistrationMode'
 const REGISTER_NEW_USER = 'registerNewUser'
 const DELETE_USER = 'deleteUser'
-const ENTER_EDIT_MODE = 'enterEditMode'
-const SAVE_CHANGES = 'saveChanges'
+const ENTER_USER_EDIT_MODE = 'enterUserEditMode'
+const LEAVE_USER_EDIT_MODE = 'leaveUserEditMode'
+const SAVE_USER_CHANGES = 'saveUserChanges'
 
 const usersReducer = (state = initialState, action) => {
 
@@ -78,7 +81,7 @@ const usersReducer = (state = initialState, action) => {
                     .concat(state.registeredUsers.slice(action.id, state.registeredUsers.length+1))
             }
         }
-        case ENTER_EDIT_MODE: {
+        case ENTER_USER_EDIT_MODE: {
             return {
                 ...state,
                 registeredUsers: [
@@ -91,7 +94,20 @@ const usersReducer = (state = initialState, action) => {
 
             }
         }
-        case SAVE_CHANGES: {
+        case LEAVE_USER_EDIT_MODE: {
+            return {
+                ...state,
+                registeredUsers: [
+                    ...state.registeredUsers.map(user => {
+                        if (user.id === action.id) {
+                            user.editMode = false
+                        } return user
+                    })
+                ],
+
+            }
+        }
+        case SAVE_USER_CHANGES: {
             return {
                 ...state,
                 registeredUsers: [
@@ -123,9 +139,11 @@ export const registerNewUser = (login, password) => ({type: REGISTER_NEW_USER, l
 
 export const deleteUser = (id) => ({type: DELETE_USER, id})
 
-export const enterEditMode = (id) => ({type: ENTER_EDIT_MODE, id})
+export const enterUserEditMode = (id) => ({type: ENTER_USER_EDIT_MODE, id})
 
-export const saveChanges = (id, newlogin) => ({type: SAVE_CHANGES, id, newlogin})
+export const leaveUserEditMode = (id) => ({type: LEAVE_USER_EDIT_MODE, id})
+
+export const saveUserChanges = (id, newlogin) => ({type: SAVE_USER_CHANGES, id, newlogin})
 
 
 export default usersReducer

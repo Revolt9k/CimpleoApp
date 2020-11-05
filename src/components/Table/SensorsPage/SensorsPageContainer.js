@@ -2,9 +2,10 @@ import {connect} from "react-redux";
 import SensorsPage from "./SensorsPage";
 import {
     deleteSensor,
-    enterEditMode,
-    saveChanges
-} from "../../redux/SensorsReducer";
+    enterSensorEditMode,
+    leaveSensorEditMode,
+    saveSensorChanges
+} from "../../../redux/SensorsReducer";
 
 let mapStateToProps = (state) => ({
     listOfSensors: state.sensors.registeredSensors
@@ -12,6 +13,7 @@ let mapStateToProps = (state) => ({
 
 export default connect(mapStateToProps, {
     deleteSensor,
-    enterEditMode,
-    saveChanges
+    enterSensorEditMode,
+    leaveSensorEditMode,
+    saveSensorChanges
 })(SensorsPage)

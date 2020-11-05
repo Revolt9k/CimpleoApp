@@ -2,9 +2,10 @@ import {connect} from "react-redux";
 import UserPage from "./UserPage";
 import {
     deleteUser,
-    enterEditMode,
-    saveChanges
-} from "../../redux/UsersReducer";
+    enterUserEditMode,
+    leaveUserEditMode,
+    saveUserChanges
+} from "../../../redux/UsersReducer";
 
 let mapStateToProps = (state) => ({
     listOfUsers: state.users.registeredUsers
@@ -12,6 +13,7 @@ let mapStateToProps = (state) => ({
 
 export default connect(mapStateToProps, {
     deleteUser,
-    enterEditMode,
-    saveChanges
+    enterUserEditMode,
+    leaveUserEditMode,
+    saveUserChanges
 })(UserPage)

@@ -1,0 +1,45 @@
+.wrapper {
+    padding: 20px 0;
+    border-radius: 20px;
+    background-color: #fff;
+}
+
+.item_wrapper {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #e3eaf0;
+
+}
+
+.header_text {
+    font-weight: 700;
+}
+
+.invisible {
+    width: 80px;
+    visibility: hidden;
+}
+
+
+.item {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: 20px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.icon {
+    cursor: pointer;
+    margin: 0 10px;
+
+}
+
+.input {
+    position: relative;
+    left: 80px;
+}
