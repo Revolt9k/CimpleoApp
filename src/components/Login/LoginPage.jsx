@@ -24,7 +24,6 @@ const LoginPage = (props) => {
 
     const handleRegister = (login, password) => {
         props.registerNewUser(login, password)
-        props.handleRegistrationMode()
     }
 
     return <div className={css.wrapper}>

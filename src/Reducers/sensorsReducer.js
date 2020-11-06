@@ -1,3 +1,8 @@
+const DELETE_SENSOR = 'deleteSensor'
+const ENTER_SENSOR_EDIT_MODE = 'enterSensorEditMode'
+const LEAVE_SENSOR_EDIT_MODE = 'leaveSensorEditMode'
+const SAVE_SENSOR_CHANGES = 'saveSensorChanges'
+
 let initialState = {
     registeredSensors: [
         {id: 1, degree: "12", editMode: false},
@@ -7,11 +12,6 @@ let initialState = {
         {id: 5, degree: "17", editMode: false},
     ],
 }
-
-const DELETE_SENSOR = 'deleteSensor'
-const ENTER_SENSOR_EDIT_MODE = 'enterSensorEditMode'
-const LEAVE_SENSOR_EDIT_MODE = 'leaveSensorEditMode'
-const SAVE_SENSOR_CHANGES = 'saveSensorChanges'
 
 const SensorsPageReducer = (state = initialState, action) => {
 
@@ -23,7 +23,8 @@ const SensorsPageReducer = (state = initialState, action) => {
                 registeredSensors: state.registeredSensors
                     .slice(0, action.id - 1)
                     .concat(" ")
-                    .concat(state.registeredSensors.slice(action.id, state.registeredSensors.length+1))
+                    .concat(state.registeredSensors
+                        .slice(action.id, state.registeredSensors.length+1))
             }
         }
         case ENTER_SENSOR_EDIT_MODE: {
@@ -69,10 +70,6 @@ const SensorsPageReducer = (state = initialState, action) => {
     }
 
 }
-
-
-
-
 
 export const deleteSensor = (id) => ({type: DELETE_SENSOR, id})
 

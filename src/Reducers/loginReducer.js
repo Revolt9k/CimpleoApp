@@ -35,7 +35,7 @@ const LoginReducer = (state = initialState, action) => {
                     isLogined: true
                 }
             } else {
-                alert("incorrect login or pass")
+                alert("Incorrect login or pass. Try again or register new.")
                 return state
             }
         }
@@ -46,15 +46,24 @@ const LoginReducer = (state = initialState, action) => {
             }
         }
         case REGISTER_NEW_USER: {
-            let newUser = {
-                id: state.registeredUsers.length + 1,
-                login: action.login,
-                password: action.password,
-            }
-            return {
-                ...state,
-                registeredUsers: [...state.registeredUsers, newUser],
-                isNewUserRegistered: true,
+            if (action.login && action.password) {
+                let newUser = {
+                    id: state.registeredUsers.length + 1,
+                    login: action.login,
+                    password: action.password,
+                }
+                return {
+                    ...state,
+                    registeredUsers: [...state.registeredUsers, newUser],
+                    registrationMode: false,
+                    isNewUserRegistered: true,
+                }
+            } else {
+                alert("Login and password cannot be null.")
+                return {
+                    ...state,
+                    registrationMode: true
+                }
             }
         }
         default :
