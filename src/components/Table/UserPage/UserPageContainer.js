@@ -5,7 +5,7 @@ import {
     enterUserEditMode,
     leaveUserEditMode,
     saveUserChanges
-} from "../../../redux/UsersReducer";
+} from "../../../Reducers/usersReducer";
 
 let mapStateToProps = (state) => ({
     listOfUsers: state.users.registeredUsers

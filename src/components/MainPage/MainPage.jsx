@@ -5,7 +5,6 @@ import css from "./MainPage.module.css"
 import UserPageContainer from "../Table/UserPage/UserPageContainer";
 import SensorsPageContainer from "../Table/SensorsPage/SensorsPageContainer";
 
-
 const MainPage = (props) => {
     return <div className={css.container}>
         <Nav showUsersPage={props.showUsersPage}

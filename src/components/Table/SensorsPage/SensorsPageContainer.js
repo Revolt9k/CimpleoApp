@@ -5,7 +5,7 @@ import {
     enterSensorEditMode,
     leaveSensorEditMode,
     saveSensorChanges
-} from "../../../redux/SensorsReducer";
+} from "../../../Reducers/sensorsReducer";
 
 let mapStateToProps = (state) => ({
     listOfSensors: state.sensors.registeredSensors

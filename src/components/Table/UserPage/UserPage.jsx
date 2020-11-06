@@ -5,7 +5,6 @@ import TableItem from "../TableItem";
 import TableItemEditMode from "../TableItemEditMode";
 
 const UserPage = (props) => {
-
     return <div className={css.wrapper}>
         <TableHeader nameOfCol={"Login"}/>
         {props.listOfUsers.map(user => {

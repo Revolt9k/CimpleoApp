@@ -6,15 +6,14 @@ import {
     getLogined,
     handleRegistrationMode,
     registerNewUser
-} from "../../redux/UsersReducer";
-
+} from "../../Reducers/loginReducer";
 
 let mapStateToProps = (state) => ({
-    login: state.users.login,
-    password: state.users.password,
-    registrationMode: state.users.registrationMode,
-    isLogined: state.users.isLogined,
-    isNewUserRegistered: state.users.isNewUserRegistered,
+    login: state.login.login,
+    password: state.login.password,
+    registrationMode: state.login.registrationMode,
+    isLogined: state.login.isLogined,
+    isNewUserRegistered: state.login.isNewUserRegistered,
 })
 
 export default connect(mapStateToProps, {

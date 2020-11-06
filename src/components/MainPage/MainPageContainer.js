@@ -3,7 +3,7 @@ import {connect} from "react-redux";
 import {
     showUsersPage,
     showSensorsPage
-} from "../../redux/mainPageReducer";
+} from "../../Reducers/mainPageReducer";
 
 let mapStateToProps = (state) => ({
     isUsersPageShown: state.mainPage.isUsersPageShown

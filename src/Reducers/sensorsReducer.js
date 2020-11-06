@@ -11,7 +11,7 @@ let initialState = {
 const DELETE_SENSOR = 'deleteSensor'
 const ENTER_SENSOR_EDIT_MODE = 'enterSensorEditMode'
 const LEAVE_SENSOR_EDIT_MODE = 'leaveSensorEditMode'
-const SAVE_SENSOR_CHANGES = 'saveCSensorhanges'
+const SAVE_SENSOR_CHANGES = 'saveSensorChanges'
 
 const SensorsPageReducer = (state = initialState, action) => {
 
@@ -36,7 +36,6 @@ const SensorsPageReducer = (state = initialState, action) => {
                         } return sensor
                     })
                 ],
-
             }
         }
         case LEAVE_SENSOR_EDIT_MODE: {
@@ -49,7 +48,6 @@ const SensorsPageReducer = (state = initialState, action) => {
                         } return sensor
                     })
                 ],
-
             }
         }
 
@@ -64,7 +62,6 @@ const SensorsPageReducer = (state = initialState, action) => {
                         } return sensor
                     })
                 ],
-
             }
         }
         default :

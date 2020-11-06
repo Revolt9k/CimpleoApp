@@ -1,9 +1,9 @@
+const SHOW_USERS_PAGE = 'showUsersPage'
+const SHOW_SENSORS_PAGE = 'showSensorsPage'
+
 let initialState = {
     isUsersPageShown: true
 }
-
-const SHOW_USERS_PAGE = 'showUsersPage'
-const SHOW_SENSORS_PAGE = 'showSensorsPage'
 
 const mainPageReducer = (state = initialState, action) => {
 
@@ -26,8 +26,8 @@ const mainPageReducer = (state = initialState, action) => {
 
 }
 
-
 export const showUsersPage = () => ({type: SHOW_USERS_PAGE, })
+
 export const showSensorsPage = () => ({type: SHOW_SENSORS_PAGE, })
 
 
